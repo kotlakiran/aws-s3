@@ -91,7 +91,7 @@ public class S3Resource {
 		objectMetadata.setUserMetadata(imageMetadata);
 		request.setMetadata(objectMetadata);
 		PutObjectResult putObjectResult=s3.putObject(request);
-		System.out.println("file Uploded succesfully ="+putObjectResult.getMetadata().toString());
+		System.out.println("file Uploded succesfully ="+putObjectResult.getMetadata().getLastModified());
 		return s3.getUrl(bucketName, request.getKey()).toString();
 	}
 }
